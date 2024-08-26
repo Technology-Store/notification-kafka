@@ -8,11 +8,11 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class RabbitMQConsumer {
+public class NotificationMQConsumer {
 
     @RabbitListener(queues = "notification-queue")
     public void receive(@Payload Object message) {
-        System.out.println("Received message: " + message.toString());
+        System.out.println(">> Received message: " + message.toString());
     }
 
 }

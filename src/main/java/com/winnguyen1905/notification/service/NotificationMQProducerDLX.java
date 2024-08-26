@@ -1,17 +1,17 @@
 package com.winnguyen1905.notification.service;
 
-import lombok.RequiredArgsConstructor;
-
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.stereotype.Service;
 
 import com.winnguyen1905.notification.configuration.NotificationProcessingConfiguration;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
 @RequiredArgsConstructor
-public class RabbitMQProducer {
+public class NotificationMQProducerDLX {
 
-	private final AmqpTemplate rabbitTemplate;
+    private final AmqpTemplate rabbitTemplate;
 
 	public void send(String company) {
 		this.rabbitTemplate.convertAndSend(
